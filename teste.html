@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Consulta Nota Fiscal - Bling</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 30px;
+    }
+    input, button {
+      padding: 10px;
+      font-size: 16px;
+      margin-top: 10px;
+    }
+    #result {
+      margin-top: 20px;
+      background: #f7f7f7;
+      padding: 15px;
+      border-radius: 6px;
+      white-space: pre-wrap;
+      border: 1px solid #ddd;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>🔍 Consultar Nota Fiscal pelo ID</h2>
+
+  <input type="number" id="idNota" placeholder="Digite o ID da nota fiscal">
+  <br>
+  <button onclick="buscarNota()">Buscar Nota</button>
+
+  <div id="result"></div>
+
+  <script>
+    async function buscarNota() {
+      const id = document.getElementById("idNota").value;
+      const resultDiv = document.getElementById("result");
+
+      if (!id) {
+        resultDiv.textContent = "❗ Digite um ID antes de buscar.";
+        return;
+      }
+
+      resultDiv.textContent = "⏳ Buscando...";
+
+      try {
+        const response = await fetch(`/nota/${id}`);
+
+        const data = await response.json();
+
+        if (response.ok) {
+          resultDiv.textContent = JSON.stringify(data, null, 2);
+        } else {
+          resultDiv.textContent = "❌ Erro: " + (data.details || data.error);
+        }
+
+      } catch (error) {
+        resultDiv.textContent = "❌ Erro de conexão com o servidor.";
+      }
+    }
+  </script>
+</body>
+</html>
