@@ -43,7 +43,7 @@ app.get("/callback", async (req, res) => {
   console.log("✅ Código recebido do Bling:", code);
 
   try {
-    // Monta o Basic Auth: client_id:client_secret codificado em Base64
+    // 
     const credentials = Buffer.from(
       `${process.env.CLIENT_ID}:${process.env.CLIENT_SECRET}`
     ).toString("base64");

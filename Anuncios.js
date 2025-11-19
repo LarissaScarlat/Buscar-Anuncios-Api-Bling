@@ -1,6 +1,6 @@
 import express from "express";
 import axios from "axios";
-import { getToken } from "./Authteste.js"; // Usa o mesmo sistema de tokens já existente
+
 
 const router = express.Router();
 
