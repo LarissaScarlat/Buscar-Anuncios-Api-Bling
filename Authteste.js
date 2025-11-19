@@ -5,6 +5,7 @@ import qs from "querystring"; // Para montar o corpo x-www-form-urlencoded
 import crypto from "crypto";  // Para gerar o parâmetro 'state' aleatório
 import fs from "fs"; // <-- Adicione isso junto às outras imports
 import notaRoute from "./Buscar.js";
+import buscarProdutos from "./routes/buscar-produtos.routes.js";
 
 import cors from "cors";
 
@@ -88,6 +89,7 @@ app.get("/callback", async (req, res) => {
 });
 
 app.use("/nfe", notaRoute);
+app.use("/api", buscarProdutos);
 
 // ========================
 // INICIA SERVIDOR
