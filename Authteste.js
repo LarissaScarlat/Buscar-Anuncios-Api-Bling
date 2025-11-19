@@ -5,10 +5,14 @@ import qs from "querystring"; // Para montar o corpo x-www-form-urlencoded
 import crypto from "crypto";  // Para gerar o parâmetro 'state' aleatório
 import fs from "fs"; // <-- Adicione isso junto às outras imports
 import notaRoute from "./Buscar.js";
-
+// ⬇️ IMPORTANTE: ADICIONE ISSO
+import cors from "cors";
 
 const app = express();
 const PORT = process.env.PORT || 3000;
+
+app.use(cors());  
+app.use(express.json());
 
 // ========================
 // 1️⃣ ROTA DE AUTORIZAÇÃO

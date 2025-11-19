@@ -17,5 +17,8 @@
     "url": "https://github.com/LarissaScarlat/Buscar-Anuncios-Api-Bling/issues"
   },
   "homepage": "https://github.com/LarissaScarlat/Buscar-Anuncios-Api-Bling#readme",
-  "description": ""
+  "description": "",
+  "dependencies": {
+    "cors": "^2.8.5"
+  }
 }
