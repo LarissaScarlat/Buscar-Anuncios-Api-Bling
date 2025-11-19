@@ -13,7 +13,7 @@ function loadTokens() {
   }
 }
 
-router.get("produtos/:sku", async (req, res) => {
+router.get("/produtos/:sku", async (req, res) => {
   try {
     const sku = req.params.sku;
 
