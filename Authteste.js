@@ -5,7 +5,11 @@ import qs from "querystring"; // Para montar o corpo x-www-form-urlencoded
 import crypto from "crypto";  // Para gerar o parâmetro 'state' aleatório
 import fs from "fs"; // <-- Adicione isso junto às outras imports
 import notaRoute from "./Buscar.js";
+<<<<<<< HEAD
 // ⬇️ IMPORTANTE: ADICIONE ISSO
+=======
+
+>>>>>>> da43aa5d8865f092764f544de6fd85957b278702
 import cors from "cors";
 
 const app = express();
@@ -95,3 +99,4 @@ app.use("/nfe", notaRoute);
 app.listen(PORT, () => {
   console.log(`🚀 Servidor rodando no link  http://localhost:${PORT}`);
 });
+
