@@ -17,6 +17,9 @@ router.get("/Saldoestoque", async (req, res) => {
     try {
 
        const {criterio = 5, tipo = "P"} = req.query;
+       if (!criterio) {
+           return res.status(400).json({ error: "Parâmetro 'criterio' é obrigatório." });
+       }    
         
         const tokens = loadTokens();
         if (!tokens || !tokens.access_token) {
