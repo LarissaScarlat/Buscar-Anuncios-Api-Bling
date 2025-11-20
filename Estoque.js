@@ -22,7 +22,7 @@ router.get("/Saldoestoque", async (req, res) => {
         if (!tokens || !tokens.access_token) {
             return res.status(401).json({ error: "Access token não encontrado. Faça a autenticação novamente." });
         }
-        const url = `https://www.bling.com.br/Api/v3/estoques/${Satoque}?criterio=${criterio}&tipo=${tipo}`;
+        const url = `https://www.bling.com.br/Api/v3/produtos/${Satoque}?criterio=${criterio}&tipo=${tipo}`;
         const response = await axios.get(url, {
             headers: {
                 Authorization: `Bearer ${tokens.access_token}`,
