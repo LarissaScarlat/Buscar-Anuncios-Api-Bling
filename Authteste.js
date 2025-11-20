@@ -91,7 +91,7 @@ app.get("/callback", async (req, res) => {
 
 app.use("/nfe", notaRoute);
 app.use("/api", buscarProdutos);
-app.use("/Estoque", EstoqueRoute);
+app.use("/produtos", EstoqueRoute);
 
 // ========================
 // INICIA SERVIDOR

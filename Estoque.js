@@ -13,7 +13,7 @@ function loadTokens() {
     }
 }
 
-router.get("/Estoque", async (req, res) => {
+router.get("/produtos", async (req, res) => {
     try {
 
        const {criterio = 5, tipo = "P"} = req.query;
