@@ -6,6 +6,7 @@ import crypto from "crypto";  // Para gerar o parâmetro 'state' aleatório
 import fs from "fs"; // <-- Adicione isso junto às outras imports
 import notaRoute from "./Buscar.js";
 import buscarProdutos from "./Anuncios.js";
+import EstoqueRoute from "./Estoque.js";
 
 import cors from "cors";
 
@@ -90,6 +91,7 @@ app.get("/callback", async (req, res) => {
 
 app.use("/nfe", notaRoute);
 app.use("/api", buscarProdutos);
+app.use("/estoque", EstoqueRoute);
 
 // ========================
 // INICIA SERVIDOR
