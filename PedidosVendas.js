@@ -31,11 +31,11 @@ router.get("/vendas", async (req, res) => {
                 });
         
                 return res.json({
-                    message: "Produtos Listados com Sucesso!",
+                    message: "Pedidos de vendas listados com sucesso!",
                     data: response.data
                 });
             } catch (error) {
-                console.error("❌ Erro ao buscar os produtos:");
+                console.error("❌ Erro ao buscar os pedidos:");
                 if (error.response) {
                     console.error("Status:", error.response.status);
                     console.error("Headers:", error.response.headers);
@@ -46,7 +46,7 @@ router.get("/vendas", async (req, res) => {
                 const details = error.response?.data || error.message;
                 const statusCode = error.response?.status || 500;
                 return res.status(statusCode).json({
-                    error: "Erro ao consultar saldo do produto",
+                    error: "Erro ao consultar os pedidos de vendas",
                     details
                 });
             }
