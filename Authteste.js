@@ -7,6 +7,7 @@ import fs from "fs"; // <-- Adicione isso junto às outras imports
 import notaRoute from "./Buscar.js";
 import buscarProdutos from "./Anuncios.js";
 import estoqueRoute from "./Estoque.js";
+import PedidosVendas from "./PedidosVendas.js";
 
 import cors from "cors";
 
@@ -92,6 +93,7 @@ app.get("/callback", async (req, res) => {
 app.use("/nfe", notaRoute);
 app.use("/api", buscarProdutos);
 app.use("/produtos", estoqueRoute);
+app.use("/pedidos", PedidosVendas);
 
 // ========================
 // INICIA SERVIDOR
